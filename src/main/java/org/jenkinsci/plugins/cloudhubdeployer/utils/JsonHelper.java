@@ -17,6 +17,10 @@ public final class JsonHelper {
         return new Gson().fromJson(loginResponse, JsonObject.class).get(Constants.JSON_KEY_ACCESS_TOKEN).getAsString();
     }
 
+    public static String getValueOfKey(String json,String key){
+        return new Gson().fromJson(json, JsonObject.class).get(key).getAsString();
+    }
+
     public static boolean checkIfApiExists(String response, String domainName) {
 
         JsonArray array = new Gson().fromJson(response,JsonArray.class);

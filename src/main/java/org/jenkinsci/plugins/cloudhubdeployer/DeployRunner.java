@@ -124,6 +124,10 @@ public class DeployRunner {
         }
 
         if(null != cloudhubResponseBody) {
+
+            DeployHelper.logOutputStandard(logger,
+                    "API URL: " + JsonHelper.getValueOfKey(cloudhubResponseBody,"fullDomain"));
+
             DeployHelper.logOutputStandard(logger, "API " + cloudHubRequest.getRequestMode().toString().toLowerCase()
                     + " request on CloudHub is successful");
         }
